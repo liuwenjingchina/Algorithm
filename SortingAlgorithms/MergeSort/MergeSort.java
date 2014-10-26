@@ -12,9 +12,12 @@ class MergeSort{
 	public static void doMergeSort(int [] A, int p, int r){
 		if (p < r)
 		{
+            // Divide Array into two equal parts, sort one by one
 			int q = (p+r)/2;
 			doMergeSort(A, p, q);
 			doMergeSort(A, q+1, r);
+            
+            // Merge the two parts together
 			merge(A, p, q, r);
 		}	
 	}
@@ -26,6 +29,7 @@ class MergeSort{
 		int[] L = new int[n1];
 		int[] R = new int[n2];
 
+        // Create a copy for each of the arrays
 		System.arraycopy(A, p, L, 0, n1);
 		System.arraycopy(A, q+1, R, 0, n2);
 
